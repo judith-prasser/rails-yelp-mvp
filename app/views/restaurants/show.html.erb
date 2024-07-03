@@ -3,5 +3,11 @@
   <h2><%= @restaurant.name %></h2>
   <p>in <%= @restaurant.address %></p>
   <p><%= @restaurant.category.capitalize %></p>
-  <p><%= @restaurant.reviews %></p>
+</div>
+<div class="p-3 ps-5 col-9">
+    <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.rating %>: <%= review.content %></li>
+    <% end %>
+  </ul>
 </div>
