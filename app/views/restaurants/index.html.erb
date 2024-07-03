@@ -1,0 +1,13 @@
+<div class="p-3 ps-5">
+  <h1>Welcome to our restaurants page</h1>
+</div>
+<div class="p-3 ps-5 col-9">
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><strong><%= link_to restaurant.name, restaurant_path(restaurant) %></strong> in <%=restaurant.address %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="p-3 ps-5 col-3">
+  <%= link_to "Add new", new_restaurant_path %>
+</div>
